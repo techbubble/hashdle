@@ -12,7 +12,7 @@ import {
   Slider
 } from '@mui/material';
 import { useContracts } from '@/app/lib/ContractContext';
-import { writeContract, waitForTransaction } from '@wagmi/core';
+import { readContract, writeContract, waitForTransaction } from '@wagmi/core';
 import { ToastContainer, toast } from 'react-toastify';
 
 
