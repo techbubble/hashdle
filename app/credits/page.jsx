@@ -14,7 +14,7 @@ import {
 import { useContracts } from '@/app/lib/ContractContext';
 import { readContract, writeContract, waitForTransaction } from '@wagmi/core';
 import { ToastContainer, toast } from 'react-toastify';
-
+import { ethers } from 'ethers';
 
 const Credits = () => {
 
