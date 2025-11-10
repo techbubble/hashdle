@@ -1,5 +1,7 @@
 ![Hashdle Preview](public/images/preview.gif)
 
+![Hashdle Demo](public/images/demo.png)
+
 # Hashdle FAQ
 
 **Play Hashdle at [https://hashdle.com](https://hashdle.com)**
@@ -143,3 +145,4 @@ No. **All actions are final, irreversible, and non-refundable.** This is because
 
 
 You can email us at [hashdlegame@gmail.com](mailto:hashdlegame@gmail.com). Please note that we may not be able to reply to all inquiries.
+
