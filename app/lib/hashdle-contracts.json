@@ -1,0 +1,2733 @@
+{
+  "mainnet": {
+    "Hashdle": "0x7ab69963D4cCF920cF7BEc886882B7679a55DA71",
+    "HashdlePay": "0xFD23d1781b3078859160606A01900e3b7fEF0112",
+    "HashdleStats": "0x3C7F47b8BF299E863af8De3cde7033984a390aB4"
+  },
+  "testnet": {},
+  "ethereum": {},
+  "bsc": {},
+  "base": {},
+  "abi": {
+    "Hashdle": [
+      {
+        "type": "event",
+        "anonymous": false,
+        "name": "AdminChanged",
+        "inputs": [
+          {
+            "type": "address",
+            "name": "previousAdmin",
+            "indexed": false
+          },
+          {
+            "type": "address",
+            "name": "newAdmin",
+            "indexed": false
+          }
+        ]
+      },
+      {
+        "type": "event",
+        "anonymous": false,
+        "name": "BeaconUpgraded",
+        "inputs": [
+          {
+            "type": "address",
+            "name": "beacon",
+            "indexed": true
+          }
+        ]
+      },
+      {
+        "type": "event",
+        "anonymous": false,
+        "name": "GameCreated",
+        "inputs": [
+          {
+            "type": "string",
+            "name": "tokenKey",
+            "indexed": true
+          },
+          {
+            "type": "uint256",
+            "name": "gameId",
+            "indexed": true
+          },
+          {
+            "type": "address",
+            "name": "player",
+            "indexed": true
+          },
+          {
+            "type": "uint8",
+            "name": "mode",
+            "indexed": false
+          },
+          {
+            "type": "uint64",
+            "name": "createdBlock",
+            "indexed": false
+          }
+        ]
+      },
+      {
+        "type": "event",
+        "anonymous": false,
+        "name": "GameEnded",
+        "inputs": [
+          {
+            "type": "string",
+            "name": "tokenKey",
+            "indexed": true
+          },
+          {
+            "type": "uint256",
+            "name": "gameId",
+            "indexed": true
+          },
+          {
+            "type": "uint8",
+            "name": "terminal",
+            "indexed": false
+          },
+          {
+            "type": "uint256",
+            "name": "userPayoutBps",
+            "indexed": false
+          },
+          {
+            "type": "uint256",
+            "name": "poolPayoutBps",
+            "indexed": false
+          },
+          {
+            "type": "uint256",
+            "name": "treasuryPayoutBps",
+            "indexed": false
+          }
+        ]
+      },
+      {
+        "type": "event",
+        "anonymous": false,
+        "name": "GameStarted",
+        "inputs": [
+          {
+            "type": "string",
+            "name": "tokenKey",
+            "indexed": true
+          },
+          {
+            "type": "uint256",
+            "name": "gameId",
+            "indexed": true
+          },
+          {
+            "type": "string",
+            "name": "gameHash",
+            "indexed": false
+          },
+          {
+            "type": "uint64",
+            "name": "endTime",
+            "indexed": false
+          }
+        ]
+      },
+      {
+        "type": "event",
+        "anonymous": false,
+        "name": "GuessSubmitted",
+        "inputs": [
+          {
+            "type": "string",
+            "name": "tokenKey",
+            "indexed": true
+          },
+          {
+            "type": "uint256",
+            "name": "gameId",
+            "indexed": true
+          },
+          {
+            "type": "uint8",
+            "name": "guessIndex",
+            "indexed": false
+          },
+          {
+            "type": "uint256",
+            "name": "costBps",
+            "indexed": false
+          },
+          {
+            "type": "bool",
+            "name": "allGreen",
+            "indexed": false
+          }
+        ]
+      },
+      {
+        "type": "event",
+        "anonymous": false,
+        "name": "Initialized",
+        "inputs": [
+          {
+            "type": "uint8",
+            "name": "version",
+            "indexed": false
+          }
+        ]
+      },
+      {
+        "type": "event",
+        "anonymous": false,
+        "name": "Paused",
+        "inputs": [
+          {
+            "type": "address",
+            "name": "account",
+            "indexed": false
+          }
+        ]
+      },
+      {
+        "type": "event",
+        "anonymous": false,
+        "name": "RoleAdminChanged",
+        "inputs": [
+          {
+            "type": "bytes32",
+            "name": "role",
+            "indexed": true
+          },
+          {
+            "type": "bytes32",
+            "name": "previousAdminRole",
+            "indexed": true
+          },
+          {
+            "type": "bytes32",
+            "name": "newAdminRole",
+            "indexed": true
+          }
+        ]
+      },
+      {
+        "type": "event",
+        "anonymous": false,
+        "name": "RoleGranted",
+        "inputs": [
+          {
+            "type": "bytes32",
+            "name": "role",
+            "indexed": true
+          },
+          {
+            "type": "address",
+            "name": "account",
+            "indexed": true
+          },
+          {
+            "type": "address",
+            "name": "sender",
+            "indexed": true
+          }
+        ]
+      },
+      {
+        "type": "event",
+        "anonymous": false,
+        "name": "RoleRevoked",
+        "inputs": [
+          {
+            "type": "bytes32",
+            "name": "role",
+            "indexed": true
+          },
+          {
+            "type": "address",
+            "name": "account",
+            "indexed": true
+          },
+          {
+            "type": "address",
+            "name": "sender",
+            "indexed": true
+          }
+        ]
+      },
+      {
+        "type": "event",
+        "anonymous": false,
+        "name": "Unpaused",
+        "inputs": [
+          {
+            "type": "address",
+            "name": "account",
+            "indexed": false
+          }
+        ]
+      },
+      {
+        "type": "event",
+        "anonymous": false,
+        "name": "Upgraded",
+        "inputs": [
+          {
+            "type": "address",
+            "name": "implementation",
+            "indexed": true
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "CREDIT_BPS",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [],
+        "outputs": [
+          {
+            "type": "uint32",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "DEFAULT_ADMIN_ROLE",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [],
+        "outputs": [
+          {
+            "type": "bytes32",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "GAME_BPS",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [],
+        "outputs": [
+          {
+            "type": "uint32",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "LONG_FEE_BPS",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [],
+        "outputs": [
+          {
+            "type": "uint32",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "LONG_SECONDS",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [],
+        "outputs": [
+          {
+            "type": "uint32",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "MAX_GUESSES",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [],
+        "outputs": [
+          {
+            "type": "uint8",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "NORMAL_SECONDS",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [],
+        "outputs": [
+          {
+            "type": "uint32",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "ORANGE_COST_BPS",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [],
+        "outputs": [
+          {
+            "type": "uint32",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "SERVICE_ROLE",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [],
+        "outputs": [
+          {
+            "type": "bytes32",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "UPGRADER_ROLE",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [],
+        "outputs": [
+          {
+            "type": "bytes32",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "WHITE_COST_BPS",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [],
+        "outputs": [
+          {
+            "type": "uint32",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "activeGameId",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [
+          {
+            "type": "string",
+            "name": ""
+          },
+          {
+            "type": "address",
+            "name": ""
+          }
+        ],
+        "outputs": [
+          {
+            "type": "uint256",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "canCreateGame",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [
+          {
+            "type": "string",
+            "name": "tokenKey"
+          },
+          {
+            "type": "address",
+            "name": "player"
+          }
+        ],
+        "outputs": [
+          {
+            "type": "bool",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "createGame",
+        "constant": false,
+        "payable": false,
+        "inputs": [
+          {
+            "type": "string",
+            "name": "tokenKey"
+          },
+          {
+            "type": "uint8",
+            "name": "mode"
+          }
+        ],
+        "outputs": [
+          {
+            "type": "uint256",
+            "name": "gameId"
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "endExpiredGames",
+        "constant": false,
+        "payable": false,
+        "inputs": [
+          {
+            "type": "string",
+            "name": "tokenKey"
+          },
+          {
+            "type": "uint256",
+            "name": "hoursBack"
+          }
+        ],
+        "outputs": []
+      },
+      {
+        "type": "function",
+        "name": "games",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [
+          {
+            "type": "string",
+            "name": ""
+          },
+          {
+            "type": "uint256",
+            "name": ""
+          }
+        ],
+        "outputs": [
+          {
+            "type": "address",
+            "name": "player"
+          },
+          {
+            "type": "uint64",
+            "name": "startTime"
+          },
+          {
+            "type": "uint64",
+            "name": "endTime"
+          },
+          {
+            "type": "uint64",
+            "name": "createdBlock"
+          },
+          {
+            "type": "uint32",
+            "name": "guessCount"
+          },
+          {
+            "type": "uint8",
+            "name": "status"
+          },
+          {
+            "type": "uint8",
+            "name": "mode"
+          },
+          {
+            "type": "bool",
+            "name": "started"
+          },
+          {
+            "type": "tuple",
+            "name": "hash",
+            "components": [
+              {
+                "type": "bytes32",
+                "name": "idHash"
+              },
+              {
+                "type": "bytes32",
+                "name": "salt"
+              },
+              {
+                "type": "string",
+                "name": "gameHash"
+              },
+              {
+                "type": "string",
+                "name": "encryptedTarget"
+              },
+              {
+                "type": "string",
+                "name": "target"
+              }
+            ]
+          },
+          {
+            "type": "tuple",
+            "name": "credits",
+            "components": [
+              {
+                "type": "uint96",
+                "name": "userEscrowBps"
+              },
+              {
+                "type": "uint96",
+                "name": "poolEscrowBps"
+              },
+              {
+                "type": "uint32",
+                "name": "firstGuessCostBps"
+              },
+              {
+                "type": "uint32",
+                "name": "treasuryEscrowBps"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "getRoleAdmin",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [
+          {
+            "type": "bytes32",
+            "name": "role"
+          }
+        ],
+        "outputs": [
+          {
+            "type": "bytes32",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "grantRole",
+        "constant": false,
+        "payable": false,
+        "inputs": [
+          {
+            "type": "bytes32",
+            "name": "role"
+          },
+          {
+            "type": "address",
+            "name": "account"
+          }
+        ],
+        "outputs": []
+      },
+      {
+        "type": "function",
+        "name": "hasRole",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [
+          {
+            "type": "bytes32",
+            "name": "role"
+          },
+          {
+            "type": "address",
+            "name": "account"
+          }
+        ],
+        "outputs": [
+          {
+            "type": "bool",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "initialize",
+        "constant": false,
+        "payable": false,
+        "inputs": [],
+        "outputs": []
+      },
+      {
+        "type": "function",
+        "name": "listActiveGames",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [
+          {
+            "type": "string",
+            "name": "tokenKey"
+          },
+          {
+            "type": "uint256",
+            "name": "startId"
+          },
+          {
+            "type": "uint256",
+            "name": "endId"
+          }
+        ],
+        "outputs": [
+          {
+            "type": "address[]",
+            "name": "players"
+          },
+          {
+            "type": "uint256[]",
+            "name": "ids"
+          },
+          {
+            "type": "uint64[]",
+            "name": "endTimes"
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "nextGameId",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [
+          {
+            "type": "string",
+            "name": ""
+          }
+        ],
+        "outputs": [
+          {
+            "type": "uint256",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "paused",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [],
+        "outputs": [
+          {
+            "type": "bool",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "pay",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [],
+        "outputs": [
+          {
+            "type": "address",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "proxiableUUID",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [],
+        "outputs": [
+          {
+            "type": "bytes32",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "renounceRole",
+        "constant": false,
+        "payable": false,
+        "inputs": [
+          {
+            "type": "bytes32",
+            "name": "role"
+          },
+          {
+            "type": "address",
+            "name": "account"
+          }
+        ],
+        "outputs": []
+      },
+      {
+        "type": "function",
+        "name": "revokeRole",
+        "constant": false,
+        "payable": false,
+        "inputs": [
+          {
+            "type": "bytes32",
+            "name": "role"
+          },
+          {
+            "type": "address",
+            "name": "account"
+          }
+        ],
+        "outputs": []
+      },
+      {
+        "type": "function",
+        "name": "setPay",
+        "constant": false,
+        "payable": false,
+        "inputs": [
+          {
+            "type": "address",
+            "name": "newPay"
+          }
+        ],
+        "outputs": []
+      },
+      {
+        "type": "function",
+        "name": "setStats",
+        "constant": false,
+        "payable": false,
+        "inputs": [
+          {
+            "type": "address",
+            "name": "newStats"
+          }
+        ],
+        "outputs": []
+      },
+      {
+        "type": "function",
+        "name": "setTokenActive",
+        "constant": false,
+        "payable": false,
+        "inputs": [
+          {
+            "type": "string",
+            "name": "tokenKey"
+          },
+          {
+            "type": "bool",
+            "name": "isActive"
+          }
+        ],
+        "outputs": []
+      },
+      {
+        "type": "function",
+        "name": "settleGame",
+        "constant": false,
+        "payable": false,
+        "inputs": [
+          {
+            "type": "string",
+            "name": "tokenKey"
+          }
+        ],
+        "outputs": []
+      },
+      {
+        "type": "function",
+        "name": "startGame",
+        "constant": false,
+        "payable": false,
+        "inputs": [
+          {
+            "type": "string",
+            "name": "tokenKey"
+          },
+          {
+            "type": "uint256",
+            "name": "gameId"
+          },
+          {
+            "type": "bytes32",
+            "name": "idHash"
+          },
+          {
+            "type": "bytes32",
+            "name": "salt"
+          },
+          {
+            "type": "string",
+            "name": "gameHash"
+          },
+          {
+            "type": "string",
+            "name": "encryptedTarget"
+          }
+        ],
+        "outputs": []
+      },
+      {
+        "type": "function",
+        "name": "stats",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [],
+        "outputs": [
+          {
+            "type": "address",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "submitGuess",
+        "constant": false,
+        "payable": false,
+        "inputs": [
+          {
+            "type": "string",
+            "name": "tokenKey"
+          },
+          {
+            "type": "uint256",
+            "name": "gameId"
+          },
+          {
+            "type": "string",
+            "name": "guessValue"
+          },
+          {
+            "type": "uint8[5]",
+            "name": "feedback"
+          }
+        ],
+        "outputs": []
+      },
+      {
+        "type": "function",
+        "name": "supportsInterface",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [
+          {
+            "type": "bytes4",
+            "name": "interfaceId"
+          }
+        ],
+        "outputs": [
+          {
+            "type": "bool",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "tokenActive",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [
+          {
+            "type": "string",
+            "name": ""
+          }
+        ],
+        "outputs": [
+          {
+            "type": "bool",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "upgradeTo",
+        "constant": false,
+        "payable": false,
+        "inputs": [
+          {
+            "type": "address",
+            "name": "newImplementation"
+          }
+        ],
+        "outputs": []
+      },
+      {
+        "type": "function",
+        "name": "upgradeToAndCall",
+        "constant": false,
+        "stateMutability": "payable",
+        "payable": true,
+        "inputs": [
+          {
+            "type": "address",
+            "name": "newImplementation"
+          },
+          {
+            "type": "bytes",
+            "name": "data"
+          }
+        ],
+        "outputs": []
+      },
+      {
+        "type": "function",
+        "name": "viewGame",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [
+          {
+            "type": "string",
+            "name": "tokenKey"
+          },
+          {
+            "type": "uint256",
+            "name": "gId"
+          }
+        ],
+        "outputs": [
+          {
+            "type": "bool",
+            "name": "hasGame"
+          },
+          {
+            "type": "uint256",
+            "name": "gameId"
+          },
+          {
+            "type": "tuple",
+            "name": "g",
+            "components": [
+              {
+                "type": "address",
+                "name": "player"
+              },
+              {
+                "type": "uint64",
+                "name": "startTime"
+              },
+              {
+                "type": "uint64",
+                "name": "endTime"
+              },
+              {
+                "type": "uint64",
+                "name": "createdBlock"
+              },
+              {
+                "type": "string[3]",
+                "name": "guesses"
+              },
+              {
+                "type": "uint8[5][3]",
+                "name": "feedback"
+              },
+              {
+                "type": "uint32",
+                "name": "guessCount"
+              },
+              {
+                "type": "uint8",
+                "name": "status"
+              },
+              {
+                "type": "uint8",
+                "name": "mode"
+              },
+              {
+                "type": "bool",
+                "name": "started"
+              },
+              {
+                "type": "tuple",
+                "name": "hash",
+                "components": [
+                  {
+                    "type": "bytes32",
+                    "name": "idHash"
+                  },
+                  {
+                    "type": "bytes32",
+                    "name": "salt"
+                  },
+                  {
+                    "type": "string",
+                    "name": "gameHash"
+                  },
+                  {
+                    "type": "string",
+                    "name": "encryptedTarget"
+                  },
+                  {
+                    "type": "string",
+                    "name": "target"
+                  }
+                ]
+              },
+              {
+                "type": "tuple",
+                "name": "credits",
+                "components": [
+                  {
+                    "type": "uint96",
+                    "name": "userEscrowBps"
+                  },
+                  {
+                    "type": "uint96",
+                    "name": "poolEscrowBps"
+                  },
+                  {
+                    "type": "uint32",
+                    "name": "firstGuessCostBps"
+                  },
+                  {
+                    "type": "uint32",
+                    "name": "treasuryEscrowBps"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "viewGameFor",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [
+          {
+            "type": "string",
+            "name": "tokenKey"
+          },
+          {
+            "type": "address",
+            "name": "player"
+          }
+        ],
+        "outputs": [
+          {
+            "type": "bool",
+            "name": "hasGame"
+          },
+          {
+            "type": "uint256",
+            "name": "gameId"
+          },
+          {
+            "type": "tuple",
+            "name": "g",
+            "components": [
+              {
+                "type": "address",
+                "name": "player"
+              },
+              {
+                "type": "uint64",
+                "name": "startTime"
+              },
+              {
+                "type": "uint64",
+                "name": "endTime"
+              },
+              {
+                "type": "uint64",
+                "name": "createdBlock"
+              },
+              {
+                "type": "string[3]",
+                "name": "guesses"
+              },
+              {
+                "type": "uint8[5][3]",
+                "name": "feedback"
+              },
+              {
+                "type": "uint32",
+                "name": "guessCount"
+              },
+              {
+                "type": "uint8",
+                "name": "status"
+              },
+              {
+                "type": "uint8",
+                "name": "mode"
+              },
+              {
+                "type": "bool",
+                "name": "started"
+              },
+              {
+                "type": "tuple",
+                "name": "hash",
+                "components": [
+                  {
+                    "type": "bytes32",
+                    "name": "idHash"
+                  },
+                  {
+                    "type": "bytes32",
+                    "name": "salt"
+                  },
+                  {
+                    "type": "string",
+                    "name": "gameHash"
+                  },
+                  {
+                    "type": "string",
+                    "name": "encryptedTarget"
+                  },
+                  {
+                    "type": "string",
+                    "name": "target"
+                  }
+                ]
+              },
+              {
+                "type": "tuple",
+                "name": "credits",
+                "components": [
+                  {
+                    "type": "uint96",
+                    "name": "userEscrowBps"
+                  },
+                  {
+                    "type": "uint96",
+                    "name": "poolEscrowBps"
+                  },
+                  {
+                    "type": "uint32",
+                    "name": "firstGuessCostBps"
+                  },
+                  {
+                    "type": "uint32",
+                    "name": "treasuryEscrowBps"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "receive",
+        "stateMutability": "payable"
+      }
+    ],
+    "HashdlePay": [
+      {
+        "type": "event",
+        "anonymous": false,
+        "name": "AdminChanged",
+        "inputs": [
+          {
+            "type": "address",
+            "name": "previousAdmin",
+            "indexed": false
+          },
+          {
+            "type": "address",
+            "name": "newAdmin",
+            "indexed": false
+          }
+        ]
+      },
+      {
+        "type": "event",
+        "anonymous": false,
+        "name": "BeaconUpgraded",
+        "inputs": [
+          {
+            "type": "address",
+            "name": "beacon",
+            "indexed": true
+          }
+        ]
+      },
+      {
+        "type": "event",
+        "anonymous": false,
+        "name": "CreditsConsumed",
+        "inputs": [
+          {
+            "type": "string",
+            "name": "tokenKey",
+            "indexed": true
+          },
+          {
+            "type": "address",
+            "name": "user",
+            "indexed": true
+          },
+          {
+            "type": "uint256",
+            "name": "bps",
+            "indexed": false
+          }
+        ]
+      },
+      {
+        "type": "event",
+        "anonymous": false,
+        "name": "CreditsDeposited",
+        "inputs": [
+          {
+            "type": "string",
+            "name": "tokenKey",
+            "indexed": true
+          },
+          {
+            "type": "address",
+            "name": "user",
+            "indexed": true
+          },
+          {
+            "type": "uint256",
+            "name": "amountTokensBig",
+            "indexed": false
+          },
+          {
+            "type": "uint256",
+            "name": "creditsBps",
+            "indexed": false
+          }
+        ]
+      },
+      {
+        "type": "event",
+        "anonymous": false,
+        "name": "CreditsGranted",
+        "inputs": [
+          {
+            "type": "string",
+            "name": "tokenKey",
+            "indexed": true
+          },
+          {
+            "type": "address",
+            "name": "user",
+            "indexed": true
+          },
+          {
+            "type": "uint256",
+            "name": "bps",
+            "indexed": false
+          }
+        ]
+      },
+      {
+        "type": "event",
+        "anonymous": false,
+        "name": "CreditsWithdrawn",
+        "inputs": [
+          {
+            "type": "string",
+            "name": "tokenKey",
+            "indexed": true
+          },
+          {
+            "type": "address",
+            "name": "user",
+            "indexed": true
+          },
+          {
+            "type": "uint256",
+            "name": "creditsBps",
+            "indexed": false
+          },
+          {
+            "type": "uint256",
+            "name": "amountTokensSmall",
+            "indexed": false
+          }
+        ]
+      },
+      {
+        "type": "event",
+        "anonymous": false,
+        "name": "Initialized",
+        "inputs": [
+          {
+            "type": "uint8",
+            "name": "version",
+            "indexed": false
+          }
+        ]
+      },
+      {
+        "type": "event",
+        "anonymous": false,
+        "name": "Paused",
+        "inputs": [
+          {
+            "type": "address",
+            "name": "account",
+            "indexed": false
+          }
+        ]
+      },
+      {
+        "type": "event",
+        "anonymous": false,
+        "name": "RoleAdminChanged",
+        "inputs": [
+          {
+            "type": "bytes32",
+            "name": "role",
+            "indexed": true
+          },
+          {
+            "type": "bytes32",
+            "name": "previousAdminRole",
+            "indexed": true
+          },
+          {
+            "type": "bytes32",
+            "name": "newAdminRole",
+            "indexed": true
+          }
+        ]
+      },
+      {
+        "type": "event",
+        "anonymous": false,
+        "name": "RoleGranted",
+        "inputs": [
+          {
+            "type": "bytes32",
+            "name": "role",
+            "indexed": true
+          },
+          {
+            "type": "address",
+            "name": "account",
+            "indexed": true
+          },
+          {
+            "type": "address",
+            "name": "sender",
+            "indexed": true
+          }
+        ]
+      },
+      {
+        "type": "event",
+        "anonymous": false,
+        "name": "RoleRevoked",
+        "inputs": [
+          {
+            "type": "bytes32",
+            "name": "role",
+            "indexed": true
+          },
+          {
+            "type": "address",
+            "name": "account",
+            "indexed": true
+          },
+          {
+            "type": "address",
+            "name": "sender",
+            "indexed": true
+          }
+        ]
+      },
+      {
+        "type": "event",
+        "anonymous": false,
+        "name": "Unpaused",
+        "inputs": [
+          {
+            "type": "address",
+            "name": "account",
+            "indexed": false
+          }
+        ]
+      },
+      {
+        "type": "event",
+        "anonymous": false,
+        "name": "Upgraded",
+        "inputs": [
+          {
+            "type": "address",
+            "name": "implementation",
+            "indexed": true
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "CREDIT_BPS",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [],
+        "outputs": [
+          {
+            "type": "uint256",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "DEFAULT_ADMIN_ROLE",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [],
+        "outputs": [
+          {
+            "type": "bytes32",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "SERVICE_ROLE",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [],
+        "outputs": [
+          {
+            "type": "bytes32",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "TREASURY_DEFAULT",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [],
+        "outputs": [
+          {
+            "type": "address",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "UPGRADER_ROLE",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [],
+        "outputs": [
+          {
+            "type": "bytes32",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "auditUserCollateral",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [
+          {
+            "type": "string",
+            "name": "tokenKey"
+          }
+        ],
+        "outputs": [
+          {
+            "type": "uint256",
+            "name": "userCreditsBps"
+          },
+          {
+            "type": "uint256",
+            "name": "tokenBalanceSmall"
+          },
+          {
+            "type": "uint256",
+            "name": "requiredTokensSmall"
+          },
+          {
+            "type": "int256",
+            "name": "diffTokensSmall"
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "chargeGuessCostBps",
+        "constant": false,
+        "payable": false,
+        "inputs": [
+          {
+            "type": "string",
+            "name": "tokenKey"
+          },
+          {
+            "type": "address",
+            "name": "user"
+          },
+          {
+            "type": "uint256",
+            "name": "costBps"
+          }
+        ],
+        "outputs": []
+      },
+      {
+        "type": "function",
+        "name": "creditPoolBps",
+        "constant": false,
+        "payable": false,
+        "inputs": [
+          {
+            "type": "string",
+            "name": "tokenKey"
+          },
+          {
+            "type": "uint256",
+            "name": "bps"
+          }
+        ],
+        "outputs": []
+      },
+      {
+        "type": "function",
+        "name": "creditUserBps",
+        "constant": false,
+        "payable": false,
+        "inputs": [
+          {
+            "type": "string",
+            "name": "tokenKey"
+          },
+          {
+            "type": "address",
+            "name": "user"
+          },
+          {
+            "type": "uint256",
+            "name": "bps"
+          }
+        ],
+        "outputs": []
+      },
+      {
+        "type": "function",
+        "name": "debitForGameStartBps",
+        "constant": false,
+        "payable": false,
+        "inputs": [
+          {
+            "type": "string",
+            "name": "tokenKey"
+          },
+          {
+            "type": "address",
+            "name": "user"
+          },
+          {
+            "type": "uint256",
+            "name": "userCostBps"
+          },
+          {
+            "type": "uint256",
+            "name": "poolCostBps"
+          }
+        ],
+        "outputs": []
+      },
+      {
+        "type": "function",
+        "name": "depositCredits",
+        "constant": false,
+        "payable": false,
+        "inputs": [
+          {
+            "type": "string",
+            "name": "tokenKey"
+          },
+          {
+            "type": "uint256",
+            "name": "amountTokensBig"
+          }
+        ],
+        "outputs": []
+      },
+      {
+        "type": "function",
+        "name": "game",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [],
+        "outputs": [
+          {
+            "type": "address",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "getRoleAdmin",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [
+          {
+            "type": "bytes32",
+            "name": "role"
+          }
+        ],
+        "outputs": [
+          {
+            "type": "bytes32",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "grantRole",
+        "constant": false,
+        "payable": false,
+        "inputs": [
+          {
+            "type": "bytes32",
+            "name": "role"
+          },
+          {
+            "type": "address",
+            "name": "account"
+          }
+        ],
+        "outputs": []
+      },
+      {
+        "type": "function",
+        "name": "hasRole",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [
+          {
+            "type": "bytes32",
+            "name": "role"
+          },
+          {
+            "type": "address",
+            "name": "account"
+          }
+        ],
+        "outputs": [
+          {
+            "type": "bool",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "initialize",
+        "constant": false,
+        "payable": false,
+        "inputs": [],
+        "outputs": []
+      },
+      {
+        "type": "function",
+        "name": "pause",
+        "constant": false,
+        "payable": false,
+        "inputs": [],
+        "outputs": []
+      },
+      {
+        "type": "function",
+        "name": "paused",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [],
+        "outputs": [
+          {
+            "type": "bool",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "proxiableUUID",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [],
+        "outputs": [
+          {
+            "type": "bytes32",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "registerToken",
+        "constant": false,
+        "payable": false,
+        "inputs": [
+          {
+            "type": "string",
+            "name": "tokenKey"
+          },
+          {
+            "type": "string",
+            "name": "symbol"
+          },
+          {
+            "type": "address",
+            "name": "contractAddress"
+          },
+          {
+            "type": "uint8",
+            "name": "decimals"
+          },
+          {
+            "type": "uint256",
+            "name": "conversion"
+          },
+          {
+            "type": "bool",
+            "name": "isActive"
+          }
+        ],
+        "outputs": []
+      },
+      {
+        "type": "function",
+        "name": "renounceRole",
+        "constant": false,
+        "payable": false,
+        "inputs": [
+          {
+            "type": "bytes32",
+            "name": "role"
+          },
+          {
+            "type": "address",
+            "name": "account"
+          }
+        ],
+        "outputs": []
+      },
+      {
+        "type": "function",
+        "name": "revokeRole",
+        "constant": false,
+        "payable": false,
+        "inputs": [
+          {
+            "type": "bytes32",
+            "name": "role"
+          },
+          {
+            "type": "address",
+            "name": "account"
+          }
+        ],
+        "outputs": []
+      },
+      {
+        "type": "function",
+        "name": "setGame",
+        "constant": false,
+        "payable": false,
+        "inputs": [
+          {
+            "type": "address",
+            "name": "newGame"
+          }
+        ],
+        "outputs": []
+      },
+      {
+        "type": "function",
+        "name": "setTokenStatus",
+        "constant": false,
+        "payable": false,
+        "inputs": [
+          {
+            "type": "string",
+            "name": "tokenKey"
+          },
+          {
+            "type": "bool",
+            "name": "isActive"
+          }
+        ],
+        "outputs": []
+      },
+      {
+        "type": "function",
+        "name": "setTokensPerCredit",
+        "constant": false,
+        "payable": false,
+        "inputs": [
+          {
+            "type": "string",
+            "name": "tokenKey"
+          },
+          {
+            "type": "uint256",
+            "name": "conversion"
+          }
+        ],
+        "outputs": []
+      },
+      {
+        "type": "function",
+        "name": "setTreasury",
+        "constant": false,
+        "payable": false,
+        "inputs": [
+          {
+            "type": "address",
+            "name": "newTreasury"
+          }
+        ],
+        "outputs": []
+      },
+      {
+        "type": "function",
+        "name": "supportsInterface",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [
+          {
+            "type": "bytes4",
+            "name": "interfaceId"
+          }
+        ],
+        "outputs": [
+          {
+            "type": "bool",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "syncTotalCreditsBps",
+        "constant": false,
+        "payable": false,
+        "inputs": [
+          {
+            "type": "string",
+            "name": "tokenKey"
+          },
+          {
+            "type": "address[]",
+            "name": "accounts"
+          }
+        ],
+        "outputs": []
+      },
+      {
+        "type": "function",
+        "name": "tokens",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [
+          {
+            "type": "string",
+            "name": ""
+          }
+        ],
+        "outputs": [
+          {
+            "type": "string",
+            "name": "symbol"
+          },
+          {
+            "type": "address",
+            "name": "contractAddress"
+          },
+          {
+            "type": "uint8",
+            "name": "decimals"
+          },
+          {
+            "type": "bool",
+            "name": "isActive"
+          },
+          {
+            "type": "uint256",
+            "name": "conversion"
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "transferTreasuryBps",
+        "constant": false,
+        "payable": false,
+        "inputs": [
+          {
+            "type": "string",
+            "name": "tokenKey"
+          },
+          {
+            "type": "uint256",
+            "name": "treasuryBps"
+          }
+        ],
+        "outputs": []
+      },
+      {
+        "type": "function",
+        "name": "transferTreasuryWithPoolBurn",
+        "constant": false,
+        "payable": false,
+        "inputs": [
+          {
+            "type": "string",
+            "name": "tokenKey"
+          },
+          {
+            "type": "uint256",
+            "name": "totalTreasuryBps"
+          },
+          {
+            "type": "uint256",
+            "name": "burnFromPoolBps"
+          }
+        ],
+        "outputs": []
+      },
+      {
+        "type": "function",
+        "name": "treasury",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [],
+        "outputs": [
+          {
+            "type": "address",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "unpause",
+        "constant": false,
+        "payable": false,
+        "inputs": [],
+        "outputs": []
+      },
+      {
+        "type": "function",
+        "name": "upgradeTo",
+        "constant": false,
+        "payable": false,
+        "inputs": [
+          {
+            "type": "address",
+            "name": "newImplementation"
+          }
+        ],
+        "outputs": []
+      },
+      {
+        "type": "function",
+        "name": "upgradeToAndCall",
+        "constant": false,
+        "stateMutability": "payable",
+        "payable": true,
+        "inputs": [
+          {
+            "type": "address",
+            "name": "newImplementation"
+          },
+          {
+            "type": "bytes",
+            "name": "data"
+          }
+        ],
+        "outputs": []
+      },
+      {
+        "type": "function",
+        "name": "viewCreditsBps",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [
+          {
+            "type": "string",
+            "name": "tokenKey"
+          },
+          {
+            "type": "address",
+            "name": "user"
+          }
+        ],
+        "outputs": [
+          {
+            "type": "uint256",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "viewPoolCreditsBps",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [
+          {
+            "type": "string",
+            "name": "tokenKey"
+          }
+        ],
+        "outputs": [
+          {
+            "type": "uint256",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "withdrawCredits",
+        "constant": false,
+        "payable": false,
+        "inputs": [
+          {
+            "type": "string",
+            "name": "tokenKey"
+          },
+          {
+            "type": "uint256",
+            "name": "amountTokensBig"
+          }
+        ],
+        "outputs": []
+      },
+      {
+        "type": "receive",
+        "stateMutability": "payable"
+      }
+    ],
+    "HashdleStats": [
+      {
+        "type": "event",
+        "anonymous": false,
+        "name": "AdminChanged",
+        "inputs": [
+          {
+            "type": "address",
+            "name": "previousAdmin",
+            "indexed": false
+          },
+          {
+            "type": "address",
+            "name": "newAdmin",
+            "indexed": false
+          }
+        ]
+      },
+      {
+        "type": "event",
+        "anonymous": false,
+        "name": "BeaconUpgraded",
+        "inputs": [
+          {
+            "type": "address",
+            "name": "beacon",
+            "indexed": true
+          }
+        ]
+      },
+      {
+        "type": "event",
+        "anonymous": false,
+        "name": "GameAddressChanged",
+        "inputs": [
+          {
+            "type": "address",
+            "name": "oldGame",
+            "indexed": true
+          },
+          {
+            "type": "address",
+            "name": "newGame",
+            "indexed": true
+          }
+        ]
+      },
+      {
+        "type": "event",
+        "anonymous": false,
+        "name": "Initialized",
+        "inputs": [
+          {
+            "type": "uint8",
+            "name": "version",
+            "indexed": false
+          }
+        ]
+      },
+      {
+        "type": "event",
+        "anonymous": false,
+        "name": "Paused",
+        "inputs": [
+          {
+            "type": "address",
+            "name": "account",
+            "indexed": false
+          }
+        ]
+      },
+      {
+        "type": "event",
+        "anonymous": false,
+        "name": "RoleAdminChanged",
+        "inputs": [
+          {
+            "type": "bytes32",
+            "name": "role",
+            "indexed": true
+          },
+          {
+            "type": "bytes32",
+            "name": "previousAdminRole",
+            "indexed": true
+          },
+          {
+            "type": "bytes32",
+            "name": "newAdminRole",
+            "indexed": true
+          }
+        ]
+      },
+      {
+        "type": "event",
+        "anonymous": false,
+        "name": "RoleGranted",
+        "inputs": [
+          {
+            "type": "bytes32",
+            "name": "role",
+            "indexed": true
+          },
+          {
+            "type": "address",
+            "name": "account",
+            "indexed": true
+          },
+          {
+            "type": "address",
+            "name": "sender",
+            "indexed": true
+          }
+        ]
+      },
+      {
+        "type": "event",
+        "anonymous": false,
+        "name": "RoleRevoked",
+        "inputs": [
+          {
+            "type": "bytes32",
+            "name": "role",
+            "indexed": true
+          },
+          {
+            "type": "address",
+            "name": "account",
+            "indexed": true
+          },
+          {
+            "type": "address",
+            "name": "sender",
+            "indexed": true
+          }
+        ]
+      },
+      {
+        "type": "event",
+        "anonymous": false,
+        "name": "Unpaused",
+        "inputs": [
+          {
+            "type": "address",
+            "name": "account",
+            "indexed": false
+          }
+        ]
+      },
+      {
+        "type": "event",
+        "anonymous": false,
+        "name": "Upgraded",
+        "inputs": [
+          {
+            "type": "address",
+            "name": "implementation",
+            "indexed": true
+          }
+        ]
+      },
+      {
+        "type": "event",
+        "anonymous": false,
+        "name": "UserStatsUpdated",
+        "inputs": [
+          {
+            "type": "string",
+            "name": "tokenKey",
+            "indexed": true
+          },
+          {
+            "type": "address",
+            "name": "user",
+            "indexed": true
+          },
+          {
+            "type": "uint32",
+            "name": "played",
+            "indexed": false
+          },
+          {
+            "type": "uint32",
+            "name": "wins",
+            "indexed": false
+          },
+          {
+            "type": "uint32",
+            "name": "losses",
+            "indexed": false
+          },
+          {
+            "type": "uint32",
+            "name": "currentStreak",
+            "indexed": false
+          },
+          {
+            "type": "uint32",
+            "name": "maxStreak",
+            "indexed": false
+          },
+          {
+            "type": "uint256",
+            "name": "totalWonBps",
+            "indexed": false
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "DEFAULT_ADMIN_ROLE",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [],
+        "outputs": [
+          {
+            "type": "bytes32",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "UPGRADER_ROLE",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [],
+        "outputs": [
+          {
+            "type": "bytes32",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "ensurePlayerSeen",
+        "constant": false,
+        "payable": false,
+        "inputs": [
+          {
+            "type": "string",
+            "name": "tokenKey"
+          },
+          {
+            "type": "address",
+            "name": "player"
+          }
+        ],
+        "outputs": []
+      },
+      {
+        "type": "function",
+        "name": "game",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [],
+        "outputs": [
+          {
+            "type": "address",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "getGlobalStats",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [
+          {
+            "type": "string",
+            "name": "tokenKey"
+          }
+        ],
+        "outputs": [
+          {
+            "type": "uint32",
+            "name": "totalGames"
+          },
+          {
+            "type": "uint32",
+            "name": "uniquePlayers"
+          },
+          {
+            "type": "uint256",
+            "name": "totalAmountWonBps"
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "getRoleAdmin",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [
+          {
+            "type": "bytes32",
+            "name": "role"
+          }
+        ],
+        "outputs": [
+          {
+            "type": "bytes32",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "grantRole",
+        "constant": false,
+        "payable": false,
+        "inputs": [
+          {
+            "type": "bytes32",
+            "name": "role"
+          },
+          {
+            "type": "address",
+            "name": "account"
+          }
+        ],
+        "outputs": []
+      },
+      {
+        "type": "function",
+        "name": "hasRole",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [
+          {
+            "type": "bytes32",
+            "name": "role"
+          },
+          {
+            "type": "address",
+            "name": "account"
+          }
+        ],
+        "outputs": [
+          {
+            "type": "bool",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "initialize",
+        "constant": false,
+        "payable": false,
+        "inputs": [],
+        "outputs": []
+      },
+      {
+        "type": "function",
+        "name": "onGameEnd",
+        "constant": false,
+        "payable": false,
+        "inputs": [
+          {
+            "type": "string",
+            "name": "tokenKey"
+          },
+          {
+            "type": "address",
+            "name": "player"
+          },
+          {
+            "type": "bool",
+            "name": "isWin"
+          },
+          {
+            "type": "uint256",
+            "name": "userPayoutBps"
+          }
+        ],
+        "outputs": []
+      },
+      {
+        "type": "function",
+        "name": "paused",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [],
+        "outputs": [
+          {
+            "type": "bool",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "proxiableUUID",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [],
+        "outputs": [
+          {
+            "type": "bytes32",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "renounceRole",
+        "constant": false,
+        "payable": false,
+        "inputs": [
+          {
+            "type": "bytes32",
+            "name": "role"
+          },
+          {
+            "type": "address",
+            "name": "account"
+          }
+        ],
+        "outputs": []
+      },
+      {
+        "type": "function",
+        "name": "revokeRole",
+        "constant": false,
+        "payable": false,
+        "inputs": [
+          {
+            "type": "bytes32",
+            "name": "role"
+          },
+          {
+            "type": "address",
+            "name": "account"
+          }
+        ],
+        "outputs": []
+      },
+      {
+        "type": "function",
+        "name": "setGame",
+        "constant": false,
+        "payable": false,
+        "inputs": [
+          {
+            "type": "address",
+            "name": "newGame"
+          }
+        ],
+        "outputs": []
+      },
+      {
+        "type": "function",
+        "name": "supportsInterface",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [
+          {
+            "type": "bytes4",
+            "name": "interfaceId"
+          }
+        ],
+        "outputs": [
+          {
+            "type": "bool",
+            "name": ""
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "name": "upgradeTo",
+        "constant": false,
+        "payable": false,
+        "inputs": [
+          {
+            "type": "address",
+            "name": "newImplementation"
+          }
+        ],
+        "outputs": []
+      },
+      {
+        "type": "function",
+        "name": "upgradeToAndCall",
+        "constant": false,
+        "stateMutability": "payable",
+        "payable": true,
+        "inputs": [
+          {
+            "type": "address",
+            "name": "newImplementation"
+          },
+          {
+            "type": "bytes",
+            "name": "data"
+          }
+        ],
+        "outputs": []
+      },
+      {
+        "type": "function",
+        "name": "userHistory",
+        "constant": true,
+        "stateMutability": "view",
+        "payable": false,
+        "inputs": [
+          {
+            "type": "string",
+            "name": "tokenKey"
+          },
+          {
+            "type": "address",
+            "name": "user"
+          }
+        ],
+        "outputs": [
+          {
+            "type": "uint32",
+            "name": "played"
+          },
+          {
+            "type": "uint32",
+            "name": "wins"
+          },
+          {
+            "type": "uint32",
+            "name": "losses"
+          },
+          {
+            "type": "uint32",
+            "name": "currentStreak"
+          },
+          {
+            "type": "uint32",
+            "name": "maxStreak"
+          },
+          {
+            "type": "uint256",
+            "name": "totalWonBps"
+          }
+        ]
+      }
+    ]
+  }
+}

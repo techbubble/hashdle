@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbit&display=swap');
+
+.hashWrap {
+  container-type: inline-size;   /* critical */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* 2) Text styles */
+.hash {
+  color: #02bbbb;
+  font-family: "Orbit", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  white-space: nowrap;
+  line-height: 1;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* 3) Container queries every 100px (based on .hashWrap width) */
+
+/* ≥1100 */
+@container (min-width: 1091px) { .hash { font-size: 28px; } }
+/* 1000–1099 */
+@container (min-width: 1000px) and (max-width: 1090px) { .hash { font-size: 26px; } }
+/* 900–999 */
+@container (min-width: 900px) and (max-width: 999px)   { .hash { font-size: 23px; } }
+/* 800–899 */
+@container (min-width: 800px) and (max-width: 899px)   { .hash { font-size: 20px; } }
+/* 700–799 */
+@container (min-width: 700px) and (max-width: 799px)   { .hash { font-size: 18px; } }
+/* 600–699 */
+@container (min-width: 600px) and (max-width: 699px)   { .hash { font-size: 15px; } }
+/* 500–599 */
+@container (min-width: 500px) and (max-width: 599px)   { .hash { font-size: 13px; } }
+/* 400–499 */
+@container (min-width: 400px) and (max-width: 499px)   { .hash { font-size: 10.5px; } }
+/* ≤399 */
+@container (max-width: 399px)                          { .hash { font-size: 8.5px; } }
