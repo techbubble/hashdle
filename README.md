@@ -1,3 +1,5 @@
+![Hashdle Preview](public/images/preview.gif)
+
 # Hashdle FAQ
 
 **Play Hashdle at [https://hashdle.com](https://hashdle.com)**
@@ -138,5 +140,6 @@ Yes! While deposits must be in multiples of 1 Credits, you can withdraw **any am
 No. **All actions are final, irreversible, and non-refundable.** This is because all game actions are recorded on the blockchain and cannot be undone.
 
 ### How do I contact you?
+
 
 You can email us at [hashdlegame@gmail.com](mailto:hashdlegame@gmail.com). Please note that we may not be able to reply to all inquiries.
