@@ -54,9 +54,9 @@ export default function RootLayout({ children, }: {  children: React.ReactNode; 
     <html lang="en" suppressHydrationWarning style={{overflowX: "hidden"}}>
       <head>
         <title>Hashdle — Crypto Guessing Game</title>
-        <meta name="description" content="Guess a five-letter sequence in three tries to win $5." />
+        <meta name="description" content="Guess a five-letter sequence in three tries to win up to $5." />
         <meta property="og:title" content="Hashdle — Crypto Guessing Game" />
-        <meta property="og:description" content="Guess a five-letter sequence in three tries to win $5." />
+        <meta property="og:description" content="Guess a five-letter sequence in three tries to win up to $5." />
         <meta property="og:image" content="https://www.hashdle.com/images/preview.png" />
         <meta property="og:url" content="https://https://www.hashdle.com" />
         <meta property="og:type" content="website" />

@@ -4,7 +4,7 @@
 
 # Hashdle FAQ
 
-**Play Hashdle at [https://hashdle.com](https://hashdle.com)**
+**Play Hashdle at [https://hashdle.com](https://www.hashdle.com)**
 
 ---
 
@@ -16,7 +16,7 @@ Hashdle is a fun, Play-to-Earn, skill-based game where you guess a secret five-l
 
 ### Is there a demo video?
 
-Yes! Watch our 2.5-minute demo video to see how Hashdle works at [hashdle.com](https://hashdle.com).
+Yes! Watch our 2.5-minute demo video to see how Hashdle works at [hashdle.com](https://www.hashdle.com).
 
 ### How do the color hints work?
 
