@@ -153,8 +153,32 @@ const Credits = () => {
     if (processing) return;
     processing = true;      
     const hashdlePayAbi = JSON.parse(hashdlePayInstance.interface.formatJson());
+    const usdcAbi = JSON.parse(usdcInstance.interface.formatJson());
 
     try {
+
+          // Check current allowance
+        const currentAllowance = await readContract({
+            address: usdcInstance.target,
+            abi: usdcAbi,
+            functionName: "allowance",
+            args: [address, hashdlePayInstance.target], // address is the user's wallet address
+        });
+
+        // Only approve if current allowance is less than deposit amount
+        if (currentAllowance < depositAmount) {
+            const approveAmount = parseUnits("100", 6); // 100 USDC (6 decimals)
+            
+            const { hash: hash1 } = await writeContract({
+                address: usdcInstance.target,
+                abi: usdcAbi,
+                functionName: "approve",
+                args: [hashdlePayInstance.target, approveAmount],
+                mode: 'recklesslyUnprepared',               
+            });
+            await waitForTransaction({ hash: hash1 });
+        }
+
         const { hash } = await writeContract({
             address: hashdlePayInstance.target,
             abi: hashdlePayAbi,
