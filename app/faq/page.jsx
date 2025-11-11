@@ -171,15 +171,15 @@ const Faq = () => {
                 <AccordionDetails>
                   <Typography>
                     Every time you get a color hint (orange or white), you pay a
-                    small fee from your escrowed credits:
+                    small Hint Fee from your escrowed credits:
                     <br />
                     <br />
-                    • Orange tiles (right letter, wrong place): 0.25 Credits
+                    • Orange hints (right letter, wrong place): 0.25 Credits
                     each
                     <br />
-                    • White tiles (wrong letter): 0.50 Credits each
+                    • White hints (wrong letter): 0.50 Credits each
                     <br />
-                    • Green tiles (correct): No fee
+                    • Green hints (correct): No fee
                     <br />
                     <br />
                     These fees are deducted from your 5 Credit escrow as you
